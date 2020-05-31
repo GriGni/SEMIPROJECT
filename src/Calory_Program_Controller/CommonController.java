@@ -9,12 +9,10 @@ public class CommonController implements Resource {
 		int num = (int) request.get("num");
 		switch (num) {
 		case ADMINISTRATOR:
-			CVArr[ADMINISTRATOR].play();
-			AdminController path = new AdminController();
-			path.AdminPath();
+			AdminController.AdminPath();
 			break;
 		case USER:
-			CVArr[USER].play();
+			UserContoroller.UserPath();
 			break;
 		case END:
 			CVArr[END].play();

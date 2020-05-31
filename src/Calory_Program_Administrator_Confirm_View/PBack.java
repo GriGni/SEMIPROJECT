@@ -1,10 +1,12 @@
 package Calory_Program_Administrator_Confirm_View;
 
+import Calory_Program_Controller.AdminController;
+
 public class PBack extends AConfirmView {
 
 	@Override
 	protected void display() {
-		// TODO Auto-generated method stub
+		AdminController.AdminPath();
 
 	}
 

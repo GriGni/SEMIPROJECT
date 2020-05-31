@@ -6,7 +6,7 @@ import Calory_Program_Resource.Resource;
 import Calory_Program_Util.MyUtil;
 
 public abstract class CommonView implements Resource{
-	protected Scanner scan = MyUtil.scan;
+	protected static Scanner scan = MyUtil.scan;
 	protected abstract void display();
 	protected abstract void showTitle();
 	
