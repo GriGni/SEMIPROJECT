@@ -24,7 +24,7 @@ public class MSearchByName extends PerInfoView {
 	protected void addAct() {
 		String breakfast = null, lunch = null, dinner = null;
 		int bkcal = 0, lkcal = 0, dkcal = 0;
-		int sumkcal = 0;
+		int sumKcal = 0;
 		
 		System.out.print("Please write your idx to change.>> ");
 		int idx  = scan.nextInt();
@@ -49,7 +49,7 @@ public class MSearchByName extends PerInfoView {
 				System.out.print("INPUT THE CALORY>> ");
 				bkcal = scan.nextInt();
 				System.out.println();
-				sumkcal += bkcal;
+				sumKcal += bkcal;
 
 			} else if (i == 2) {
 				System.out.println("<<THE LUNCH>>");
@@ -58,7 +58,7 @@ public class MSearchByName extends PerInfoView {
 				System.out.print("INPUT THE CALORY>> ");
 				lkcal = scan.nextInt();
 				System.out.println();
-				sumkcal += lkcal;
+				sumKcal += lkcal;
 			} else {
 				System.out.println("<<THE DINNER>>");
 				System.out.print("INPUT THE FOOD>> ");
@@ -66,10 +66,9 @@ public class MSearchByName extends PerInfoView {
 				System.out.print("INPUT THE CALORY>>  ");
 				dkcal = scan.nextInt();
 				System.out.println();
-				sumkcal += dkcal;
+				sumKcal += dkcal;
 		}
-		System.out.println(sumkcal + "kcal");
-		request.put("dto", new PeopleAndCaloryDto(idx, name, sex, age, phone, address, breakfast, bkcal, lunch, lkcal, dinner, dkcal, sumkcal));
+		request.put("dto", new PeopleAndCaloryDto(idx, name, sex, age, phone, address, breakfast, bkcal, lunch, lkcal, dinner, dkcal, sumKcal));
 		}
 	}
 }

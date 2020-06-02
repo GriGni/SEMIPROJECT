@@ -9,7 +9,7 @@ public class PeopleAndCaloryDao {
 	public PeopleAndCaloryDao(ArrayList<PeopleAndCaloryDto> dtoList) {
 		this.dtoList = dtoList;
 		this.dtoList.add(new PeopleAndCaloryDto(seq++, "daniel", "man", "30", "010-2456-3333", "osan", "pizza", 800,
-				"chicken", 600, "hamburger", 700, 2100));
+				"chicken", 900, "hamburger", 900, 2600));
 		this.dtoList.add(new PeopleAndCaloryDto(seq++, "karen", "female", "28", "010-3552-6742", "seoul",
 				"rice with side dish", 700, "ramen", 800, "curtlet", 700, 2200));
 		this.dtoList.add(new PeopleAndCaloryDto(seq++, "nicolas", "man", "34", "010-2345-6624", "suwon", "salad", 500,
@@ -39,9 +39,9 @@ public class PeopleAndCaloryDao {
 			int lkcal = dto.getLkcal();
 			String dinner = dto.getDinner();
 			int dkcal = dto.getDkcal();
-			int sumkcal = dto.getSumKcal();
+			int sumKcal = dto.getSumKcal();
 			PeopleAndCaloryDto newDto = new PeopleAndCaloryDto(idx, name, sex, age, phone, address, breakfast, bkcal,
-					lunch, lkcal, dinner, dkcal, sumkcal);
+					lunch, lkcal, dinner, dkcal, sumKcal);
 			list.add(newDto);
 		}
 		return list;
@@ -65,9 +65,9 @@ public class PeopleAndCaloryDao {
 				int lkcal = dto.getLkcal();
 				String dinner = dto.getDinner();
 				int dkcal = dto.getDkcal();
-				int sumkcal = dto.getSumKcal();
+				int sumKcal = dto.getSumKcal();
 				PeopleAndCaloryDto newDto = new PeopleAndCaloryDto(idx, name, sex, age, phone, address, breakfast,
-						bkcal, lunch, lkcal, dinner, dkcal, sumkcal);
+						bkcal, lunch, lkcal, dinner, dkcal, sumKcal);
 				list.add(newDto);
 			}
 
@@ -93,9 +93,9 @@ public class PeopleAndCaloryDao {
 				int lkcal = dto.getLkcal();
 				String dinner = dto.getDinner();
 				int dkcal = dto.getDkcal();
-				int sumkcal = dto.getSumKcal();
+				int sumKcal = dto.getSumKcal();
 				PeopleAndCaloryDto newDto = new PeopleAndCaloryDto(idx, name, sex, age, phone, address, breakfast,
-						bkcal, lunch, lkcal, dinner, dkcal, sumkcal);
+						bkcal, lunch, lkcal, dinner, dkcal, sumKcal);
 				list.add(newDto);
 			}
 		}
@@ -110,5 +110,30 @@ public class PeopleAndCaloryDao {
 				return;
 			}
 		}
+	}
+
+	//ÀÛ¾÷Áß.
+	public ArrayList<PeopleAndCaloryDto> selectFullPeople(PeopleAndCaloryDto PigPeople) {
+		ArrayList<PeopleAndCaloryDto> list = new ArrayList<PeopleAndCaloryDto>();
+		for (int i = 0; i < dtoList.size(); i++) {
+			PeopleAndCaloryDto dto = dtoList.get(i);
+			int idx = dto.getIdx();
+			String name = dto.getName();
+			String sex = dto.getSex();
+			String age = dto.getAge();
+			String phone = dto.getPhone();
+			String address = dto.getAddress();
+			String breakfast = dto.getBreakfast();
+			int bkcal = dto.getBkcal();
+			String lunch = dto.getLunch();
+			int lkcal = dto.getLkcal();
+			String dinner = dto.getDinner();
+			int dkcal = dto.getDkcal();
+			int sumKcal = dto.getSumKcal();
+			PeopleAndCaloryDto newDto = new PeopleAndCaloryDto(idx, name, sex, age, phone, address, breakfast, bkcal,
+					lunch, lkcal, dinner, dkcal, sumKcal);
+			list.add(newDto);
+		}
+		return list;
 	}
 }

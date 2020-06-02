@@ -1,11 +1,17 @@
 package Calory_Program_Administrator_Confirm_View;
 
+import java.util.ArrayList;
+
+import Calory_Program_Model.PeopleAndCaloryDto;
+
 public class PrintPeopleAteALot extends AConfirmView {
 
 	@Override
 	protected void display() {
-		// TODO Auto-generated method stub
-
+		ArrayList<PeopleAndCaloryDto> list = (ArrayList<PeopleAndCaloryDto>) request.get("list");
+		for(PeopleAndCaloryDto dto : list) {
+			System.out.println(dto);
+		}
 	}
 
 	@Override
